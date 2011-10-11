@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocketIO.h"
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <SocketIODelegate>
 
 @end

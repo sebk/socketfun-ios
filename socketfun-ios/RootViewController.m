@@ -14,7 +14,29 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  SocketIO *socket = [[SocketIO alloc]initWithDelegate:self];
+  [socket connectToHost:@"localhost" onPort:3001];
+  
 }
+
+
+#pragma mark - socketIO callbacks
+
+- (void) socketIODidConnect:(SocketIO *)socket {
+  NSLog(@"socket did connect");
+}
+
+- (void) socketIODidDisconnect:(SocketIO *)socket {
+  NSLog(@"socket did disconnect");
+}
+
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
+  NSLog(@"didReceiveMessage() >>> data: %@", packet.data);
+}
+
+
+#pragma mark - view lifecycle
 
 - (void)viewWillAppear:(BOOL)animated
 {
