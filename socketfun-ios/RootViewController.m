@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "SBJson.h"
 
 @implementation RootViewController
 
@@ -16,8 +17,24 @@
   [super viewDidLoad];
   
   SocketIO *socket = [[SocketIO alloc]initWithDelegate:self];
+  //[socket connectToHost:@"192.168.100.195" onPort:3001];
   [socket connectToHost:@"localhost" onPort:3001];
   
+  NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+  [dict setObject:@"app.echo" forKey:@"method"];
+  [dict setObject:[NSArray arrayWithObject:@"test123"] forKey:@"params"];
+  
+  //[socket sendJSON:dict];
+  //[socket sendMessage:[dict JSONRepresentation]];
+  //[socket sendMessage:@"{method: \'app.echo\', params: [\'test\']}"];
+  
+//[socket sendEvent:@"server" withData:dict ];
+  [socket sendEvent:@"server" withData:dict andAcknowledge:@selector(callbackSend:)];
+}
+
+-(void)callbackSend:(id) packet {
+  NSLog(@"send send");
+  NSLog(@"p: %@", packet);
 }
 
 
@@ -32,7 +49,11 @@
 }
 
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
-  NSLog(@"didReceiveMessage() >>> data: %@", packet.data);
+  NSLog(@"didReceiveEvent() >>> data: %@", packet.data);
+}
+
+- (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet {
+  //NSLog(@"didSendMessage: %@", packet.data);
 }
 
 
