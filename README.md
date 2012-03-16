@@ -4,6 +4,16 @@ As an testserver you can use the  [socketfun](https://github.com/a0n/socketfun) 
 
 This project uses [socket.IO-objc](https://github.com/pkyeck/socket.IO-objc).
 
+To checkout the project:
+
+    git clone
+    git submodule init
+    git submodule update
+
+or
+
+    git clone --recursive
+
 ##Dependencies
 [socket.IO-objc](https://github.com/pkyeck/socket.IO-objc) is an interface to communicate between Objective-C and [Socket.IO](http://socket.io/) with the help of websockets and uses
 
