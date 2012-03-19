@@ -20,8 +20,16 @@
   
   socketIO = [[SocketIO alloc]initWithDelegate:self];
   //[socketIO connectToHost:@"localhost" onPort:3001];
-  //[socketIO connectToHost:@"192.168.100.165" onPort:4444];
-  [socketIO connectToHost:@"192.168.100.165" onPort:4444 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"coo", nil] ];
+  //
+  
+  NSMutableDictionary *headerDict = [NSMutableDictionary dictionary];
+  NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
+  [cookieDict setValue:@"ein test" forKey:@"cookie"];
+  [headerDict setValue:cookieDict forKey:@"header"];
+  NSLog(@"headerDict: %@", headerDict);
+  
+  [socketIO connectToHost:@"192.168.100.165" onPort:4444];
+  //[socketIO connectToHost:@"192.168.100.165" onPort:4444 withParams:headerDict ];
   
   NSMutableDictionary *dict = [NSMutableDictionary dictionary];
   [dict setObject:@"session.logged_in" forKey:@"method"];
