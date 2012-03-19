@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SocketIO.h"
 
-@interface RootViewController : UITableViewController <SocketIODelegate>
+@interface RootViewController : UITableViewController <SocketIODelegate> {
+  SocketIO *socketIO;
+}
+
+@property(nonatomic, retain) SocketIO *socketIO;
+
 
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96106FC21513844B0014D466 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 96106FBB1513844B0014D466 /* base64.c */; };
+		96106FC31513844B0014D466 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */; };
+		96106FC41513844B0014D466 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 96106FC11513844B0014D466 /* SRWebSocket.m */; };
+		96106FC6151385940014D466 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96106FC5151385940014D466 /* libicucore.dylib */; };
+		96106FC81513859C0014D466 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96106FC71513859C0014D466 /* Security.framework */; };
 		9637243B1447724200C9E884 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 963724261447724200C9E884 /* ASIAuthenticationDialog.m */; };
 		9637243C1447724200C9E884 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 963724291447724200C9E884 /* ASIDataCompressor.m */; };
 		9637243D1447724200C9E884 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637242B1447724200C9E884 /* ASIDataDecompressor.m */; };
@@ -32,7 +37,7 @@
 		9637262A1447727100C9E884 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 963724891447727000C9E884 /* SBJsonUTF8Stream.m */; };
 		9637262B1447727100C9E884 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637248B1447727000C9E884 /* SBJsonWriter.m */; };
 		9637275C144772B300C9E884 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637275B144772B300C9E884 /* RegexKitLite.m */; };
-		96372766144772B800C9E884 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 96372762144772B800C9E884 /* SocketIO.m */; };
+		9680C12815175A9C003D451A /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680C12715175A9C003D451A /* SocketIO.m */; };
 		96A854D51444B107004947E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A854D41444B107004947E9 /* UIKit.framework */; };
 		96A854D71444B107004947E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A854D61444B107004947E9 /* Foundation.framework */; };
 		96A854D91444B107004947E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A854D81444B107004947E9 /* CoreGraphics.framework */; };
@@ -49,6 +54,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96106FBB1513844B0014D466 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		96106FBC1513844B0014D466 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		96106FBD1513844B0014D466 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		96106FBF1513844B0014D466 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		96106FC01513844B0014D466 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		96106FC11513844B0014D466 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		96106FC5151385940014D466 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		96106FC71513859C0014D466 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		963724251447724200C9E884 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		963724261447724200C9E884 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		963724271447724200C9E884 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -104,8 +118,8 @@
 		9637248B1447727000C9E884 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		9637275A144772B300C9E884 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		9637275B144772B300C9E884 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		96372761144772B800C9E884 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
-		96372762144772B800C9E884 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		9680C12615175A9C003D451A /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		9680C12715175A9C003D451A /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
 		96A854D01444B107004947E9 /* socketfun-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "socketfun-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A854D41444B107004947E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96A854D61444B107004947E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96106FC81513859C0014D466 /* Security.framework in Frameworks */,
+				96106FC6151385940014D466 /* libicucore.dylib in Frameworks */,
 				96A858981444C065004947E9 /* libz.dylib in Frameworks */,
 				96A858961444C03F004947E9 /* MobileCoreServices.framework in Frameworks */,
 				96A858941444C035004947E9 /* SystemConfiguration.framework in Frameworks */,
@@ -144,6 +160,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96106FBA1513844B0014D466 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				96106FBB1513844B0014D466 /* base64.c */,
+				96106FBC1513844B0014D466 /* base64.h */,
+				96106FBD1513844B0014D466 /* NSData+SRB64Additions.h */,
+				96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */,
+				96106FBF1513844B0014D466 /* SocketRocket-Prefix.pch */,
+				96106FC01513844B0014D466 /* SRWebSocket.h */,
+				96106FC11513844B0014D466 /* SRWebSocket.m */,
+			);
+			name = SocketRocket;
+			path = dependencies/SocketRocket;
+			sourceTree = SOURCE_ROOT;
+		};
 		963724241447724200C9E884 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,8 +281,8 @@
 		9637275D144772B800C9E884 /* socket.IO-objc */ = {
 			isa = PBXGroup;
 			children = (
-				96372761144772B800C9E884 /* SocketIO.h */,
-				96372762144772B800C9E884 /* SocketIO.m */,
+				9680C12615175A9C003D451A /* SocketIO.h */,
+				9680C12715175A9C003D451A /* SocketIO.m */,
 			);
 			name = "socket.IO-objc";
 			path = "dependencies/socket.IO-objc";
@@ -278,6 +309,8 @@
 		96A854D31444B107004947E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96106FC71513859C0014D466 /* Security.framework */,
+				96106FC5151385940014D466 /* libicucore.dylib */,
 				96A858971444C065004947E9 /* libz.dylib */,
 				96A858951444C03F004947E9 /* MobileCoreServices.framework */,
 				96A858931444C035004947E9 /* SystemConfiguration.framework */,
@@ -317,6 +350,7 @@
 		96A855021444BCE5004947E9 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				96106FBA1513844B0014D466 /* SocketRocket */,
 				9637275D144772B800C9E884 /* socket.IO-objc */,
 				96372759144772B300C9E884 /* RegexKitLite */,
 				9637246F1447727000C9E884 /* json-framework */,
@@ -352,6 +386,9 @@
 /* Begin PBXProject section */
 		96A854C71444B107004947E9 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 96A854CA1444B107004947E9 /* Build configuration list for PBXProject "socketfun-ios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -416,7 +453,10 @@
 				9637262A1447727100C9E884 /* SBJsonUTF8Stream.m in Sources */,
 				9637262B1447727100C9E884 /* SBJsonWriter.m in Sources */,
 				9637275C144772B300C9E884 /* RegexKitLite.m in Sources */,
-				96372766144772B800C9E884 /* SocketIO.m in Sources */,
+				96106FC21513844B0014D466 /* base64.c in Sources */,
+				96106FC31513844B0014D466 /* NSData+SRB64Additions.m in Sources */,
+				96106FC41513844B0014D466 /* SRWebSocket.m in Sources */,
+				9680C12815175A9C003D451A /* SocketIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +540,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "socketfun-ios/socketfun-ios-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "socketfun-ios/socketfun-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -511,6 +552,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "socketfun-ios/socketfun-ios-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "socketfun-ios/socketfun-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

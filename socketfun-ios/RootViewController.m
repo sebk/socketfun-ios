@@ -11,17 +11,20 @@
 
 @implementation RootViewController
 
+@synthesize socketIO;
+
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-  SocketIO *socket = [[SocketIO alloc]initWithDelegate:self];
-  //[socket connectToHost:@"192.168.100.195" onPort:3001];
-  [socket connectToHost:@"localhost" onPort:3001];
+  socketIO = [[SocketIO alloc]initWithDelegate:self];
+  //[socketIO connectToHost:@"localhost" onPort:3001];
+  //[socketIO connectToHost:@"192.168.100.165" onPort:4444];
+  [socketIO connectToHost:@"192.168.100.165" onPort:4444 withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"coo", nil] ];
   
   NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-  [dict setObject:@"app.echo" forKey:@"method"];
+  [dict setObject:@"session.logged_in" forKey:@"method"];
   [dict setObject:[NSArray arrayWithObject:@"test123"] forKey:@"params"];
   
   //[socket sendJSON:dict];
@@ -29,13 +32,27 @@
   //[socket sendMessage:@"{method: \'app.echo\', params: [\'test\']}"];
   
 //[socket sendEvent:@"server" withData:dict ];
-  [socket sendEvent:@"server" withData:dict andAcknowledge:@selector(callbackSend:)];
+  
+  SocketIOCallback cb = ^(id argsData) {
+    NSDictionary *response = argsData;
+    NSLog(@"sendEvent acknowledged: %@", response);
+    // do something with response
+  };
+  
+  //[socketIO sendEvent:@"server" withData:dict andAcknowledge:cb];
+  
+  
+  NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
+  [dict2 setValue:@"1" forKey:@"id"];
+  [dict2 setValue:@"session.logged_in" forKey:@"m"];
+  [dict2 setObject:[NSArray arrayWithObject:@"hallo"] forKey:@"p"];
+  NSString *json = [dict2 JSONRepresentation];
+  NSString *outData = [NSString stringWithFormat:@"rpc|%@", json];
+  
+  //[socketIO sendJSON:outData withAcknowledge:cb];
+  [socketIO sendMessage:outData withAcknowledge:cb];
 }
 
--(void)callbackSend:(id) packet {
-  NSLog(@"send send");
-  NSLog(@"p: %@", packet);
-}
 
 
 #pragma mark - socketIO callbacks
@@ -182,6 +199,7 @@
 
 - (void)dealloc
 {
+  [socketIO release];
     [super dealloc];
 }
 
