@@ -19,36 +19,26 @@
   [super viewDidLoad];
   
   socketIO = [[SocketIO alloc]initWithDelegate:self];
-  //[socketIO connectToHost:@"localhost" onPort:3001];
-  //
-  
-  NSMutableDictionary *headerDict = [NSMutableDictionary dictionary];
+
+  /*NSMutableDictionary *headerDict = [NSMutableDictionary dictionary];
   NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
   [cookieDict setValue:@"ein test" forKey:@"cookie"];
   [headerDict setValue:cookieDict forKey:@"header"];
-  NSLog(@"headerDict: %@", headerDict);
+  NSLog(@"headerDict: %@", headerDict); */
   
   [socketIO connectToHost:@"192.168.100.165" onPort:4444];
-  //[socketIO connectToHost:@"192.168.100.165" onPort:4444 withParams:headerDict ];
   
   NSMutableDictionary *dict = [NSMutableDictionary dictionary];
   [dict setObject:@"session.logged_in" forKey:@"method"];
   [dict setObject:[NSArray arrayWithObject:@"test123"] forKey:@"params"];
-  
-  //[socket sendJSON:dict];
-  //[socket sendMessage:[dict JSONRepresentation]];
-  //[socket sendMessage:@"{method: \'app.echo\', params: [\'test\']}"];
-  
-//[socket sendEvent:@"server" withData:dict ];
-  
+
+    
   SocketIOCallback cb = ^(id argsData) {
     NSDictionary *response = argsData;
     NSLog(@"sendEvent acknowledged: %@", response);
     // do something with response
   };
-  
-  //[socketIO sendEvent:@"server" withData:dict andAcknowledge:cb];
-  
+    
   
   NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
   [dict2 setValue:@"1" forKey:@"id"];
@@ -57,7 +47,6 @@
   NSString *json = [dict2 JSONRepresentation];
   NSString *outData = [NSString stringWithFormat:@"rpc|%@", json];
   
-  //[socketIO sendJSON:outData withAcknowledge:cb];
   [socketIO sendMessage:outData withAcknowledge:cb];
 }
 
