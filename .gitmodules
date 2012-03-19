@@ -4,3 +4,6 @@
 [submodule "dependencies/json-framework"]
 	path = dependencies/json-framework
 	url = git://github.com/stig/json-framework.git
+[submodule "dependencies/socket.IO-objc"]
+	path = dependencies/socket.IO-objc
+	url = git@github.com:gobas/socket.IO-objc.git
