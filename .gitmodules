@@ -1,6 +1,6 @@
-[submodule "dependencies/socket.IO-objc"]
-	path = dependencies/socket.IO-objc
-	url = git://github.com/pkyeck/socket.IO-objc.git
+#[submodule "dependencies/socket.IO-objc"]
+#	path = dependencies/socket.IO-objc
+#	url = git://github.com/pkyeck/socket.IO-objc.git
 [submodule "dependencies/cocoa-websocket"]
 	path = dependencies/cocoa-websocket
 	url = git://github.com/erichocean/cocoa-websocket.git
