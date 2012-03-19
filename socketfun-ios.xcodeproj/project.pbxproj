@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96106FC21513844B0014D466 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 96106FBB1513844B0014D466 /* base64.c */; };
-		96106FC31513844B0014D466 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */; };
-		96106FC41513844B0014D466 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 96106FC11513844B0014D466 /* SRWebSocket.m */; };
 		96106FC6151385940014D466 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96106FC5151385940014D466 /* libicucore.dylib */; };
 		96106FC81513859C0014D466 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96106FC71513859C0014D466 /* Security.framework */; };
 		9637243B1447724200C9E884 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 963724261447724200C9E884 /* ASIAuthenticationDialog.m */; };
@@ -54,13 +51,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96106FBB1513844B0014D466 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
-		96106FBC1513844B0014D466 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
-		96106FBD1513844B0014D466 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
-		96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
-		96106FBF1513844B0014D466 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
-		96106FC01513844B0014D466 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
-		96106FC11513844B0014D466 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 		96106FC5151385940014D466 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		96106FC71513859C0014D466 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		963724251447724200C9E884 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -160,21 +150,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96106FBA1513844B0014D466 /* SocketRocket */ = {
-			isa = PBXGroup;
-			children = (
-				96106FBB1513844B0014D466 /* base64.c */,
-				96106FBC1513844B0014D466 /* base64.h */,
-				96106FBD1513844B0014D466 /* NSData+SRB64Additions.h */,
-				96106FBE1513844B0014D466 /* NSData+SRB64Additions.m */,
-				96106FBF1513844B0014D466 /* SocketRocket-Prefix.pch */,
-				96106FC01513844B0014D466 /* SRWebSocket.h */,
-				96106FC11513844B0014D466 /* SRWebSocket.m */,
-			);
-			name = SocketRocket;
-			path = dependencies/SocketRocket;
-			sourceTree = SOURCE_ROOT;
-		};
 		963724241447724200C9E884 /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +325,6 @@
 		96A855021444BCE5004947E9 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				96106FBA1513844B0014D466 /* SocketRocket */,
 				9637275D144772B800C9E884 /* socket.IO-objc */,
 				96372759144772B300C9E884 /* RegexKitLite */,
 				9637246F1447727000C9E884 /* json-framework */,
@@ -453,9 +427,6 @@
 				9637262A1447727100C9E884 /* SBJsonUTF8Stream.m in Sources */,
 				9637262B1447727100C9E884 /* SBJsonWriter.m in Sources */,
 				9637275C144772B300C9E884 /* RegexKitLite.m in Sources */,
-				96106FC21513844B0014D466 /* base64.c in Sources */,
-				96106FC31513844B0014D466 /* NSData+SRB64Additions.m in Sources */,
-				96106FC41513844B0014D466 /* SRWebSocket.m in Sources */,
 				9680C12B151764C8003D451A /* SocketIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
