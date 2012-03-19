@@ -19,32 +19,21 @@
   [super viewDidLoad];
   
   socketIO = [[SocketIO alloc]initWithDelegate:self];
-
-  /*NSMutableDictionary *headerDict = [NSMutableDictionary dictionary];
-  NSMutableDictionary *cookieDict = [NSMutableDictionary dictionary];
-  [cookieDict setValue:@"ein test" forKey:@"cookie"];
-  [headerDict setValue:cookieDict forKey:@"header"];
-  NSLog(@"headerDict: %@", headerDict); */
   
-  [socketIO connectToHost:@"192.168.100.165" onPort:4444];
-  
-  NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-  [dict setObject:@"session.logged_in" forKey:@"method"];
-  [dict setObject:[NSArray arrayWithObject:@"test123"] forKey:@"params"];
-
+  [socketIO connectToHost:@"192.168.100.150" onPort:4444];
     
   SocketIOCallback cb = ^(id argsData) {
     NSDictionary *response = argsData;
     NSLog(@"sendEvent acknowledged: %@", response);
-    // do something with response
+    // do something with the response
   };
     
-  
-  NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
-  [dict2 setValue:@"1" forKey:@"id"];
-  [dict2 setValue:@"session.logged_in" forKey:@"m"];
-  [dict2 setObject:[NSArray arrayWithObject:@"hallo"] forKey:@"p"];
-  NSString *json = [dict2 JSONRepresentation];
+  //data for the websocket request
+  NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+  [dict setValue:@"1" forKey:@"id"];
+  [dict setValue:@"session.logged_in" forKey:@"m"];
+  [dict setObject:[NSArray arrayWithObject:@"hallo"] forKey:@"p"];
+  NSString *json = [dict JSONRepresentation];
   NSString *outData = [NSString stringWithFormat:@"rpc|%@", json];
   
   [socketIO sendMessage:outData withAcknowledge:cb];
